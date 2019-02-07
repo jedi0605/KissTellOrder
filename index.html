@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kiss & Tell Vintage">
+  <title>Kiss &amp Tell Vintage Photography Order Form</title>
+</head>
+<!-- Data
+name="name"
+name="email"
+name="phone"
+name="basic_fee"
+name="photographer_fee"
+name="additional_hours"
+name="additional_time_fee"
+name="make_up_amount"
+name="make_up_fee"
+name="eyelashes_amount"
+name="eyelashes_fee"
+name="hair1"
+name="hair2"
+name="hair3"
+name="hair4"
+name="hair5"
+name="hair6"
+name="hair7"
+name="hair8"
+name="gents_hair_amount"
+name="gents_hair_fee"
+name="pre_discount_fee"
+name="hair_makeup_discount"
+name="total_fee"
+-->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
+  html {
+    font: 12px sans-serif;
+  }
+
+  input {
+    font: 12px sans-serif;
+    outline: none;
+  }
+
+  body {
+    background-color: lightGray;
+    max-width: 420px;
+    margin: 10px auto;
+  }
+
+  section {
+    padding: 3px 5%;
+  }
+
+  #mainsection {
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+  }
+
+  #submitsection {
+    background-color: pink;
+    border-radius: 0 0 10px 10px;
+  }
+
+  h1 {
+    text-align: center;
+    font: 28px 'Josefin Slab', serif;
+  }
+
+  h2 {
+    font: 20px sans-serif;
+    color: pink;
+  }
+
+  #contactDetails label {
+    display: inline-block;
+    width: 100px;
+  }
+
+  .contact {
+    display: inline-block;
+    width: 250px;
+    float: right;
+  }
+
+  textarea {
+    resize: none;
+    display: inline-block;
+    outline: none;
+    width: 100%;
+  }
+
+  #pricing label {
+    display: inline-block;
+    width: 200px;
+  }
+
+  #basic Output {
+    color: dimgray;
+  }
+
+  .disp {
+    border: 0 solid;
+    width: 50px;
+  }
+
+  .fee {
+    display: inline-block;
+    width: 40px;
+    float: right;
+    text-align: right;
+  }
+
+  .feeNoBoarder {
+    display: inline-block;
+    width: auto;
+    float: right;
+    border: 0px;
+    text-align: right;
+  }
+
+  .grayNoBoarder {
+    display: inline-block;
+    width: auto;
+    float: right;
+    border: 0px;
+    color: gray;
+    text-align: right;
+  }
+
+  .grayText {
+    color: dimgray;
+  }
+
+  input[type="range"] {
+    width: 60px;
+  }
+
+  .hair {
+    font-size: 11px;
+    color: dimgray;
+    padding-left: 0px;
+  }
+
+  button {
+    background-color: whitesmoke;
+  }
+
+  /* <!-- @media only screen and (max-width: 360px) --> */
+</style>
+
+<body>
+
+  <!-- START HERE -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+  <!-- Style The Contact Form How Ever You Prefer -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbzwBVO_2IvD9qX2b_8fKsj1Qj6zDQedVbycn-Zg/exec">
+    <!-- change the form action to your script url -->
+
+    <section id="mainsection">
+
+      <h1>Kiss &amp Tell 復古攝影</h1>
+      <!-- Changes made to the order form after pressing "calculate total" are not automatically recalculated -->
+      <div class="form-elements">
+        <!-- <fieldset class="pure-group"> -->
+        <!-- <label>姓名：</label>
+        <input class="contact" id="name" name="name" placeholder="What your Mom calls you" /> -->
+        <div id="contactDetails">
+          <h2>聯絡資料</h2>
+          <p></p>
+          <label>姓名：</label>
+          <input class="contact" id="nameInput" value="(REQUIRED)" name="name">
+          <p></p>
+          <label>EMAIL：</label>
+          <input class="contact" id="emailInput" type="email" value="(REQUIRED)" name="email">
+          <p></p>
+          <label>電話：</label>
+          <input class="contact" id="phoneInput" type="tel" value="(OPTIONAL)" name="phone">
+        </div>
+
+        <h2>價格表</h2>
+        <div id="pricing">
+          <p></p>
+          <label>基本費用（含場租 3 小時）：</label>
+          <input class="feeNoBoarder" id="basicOutput" type="text" value="3000" readonly name="basic_fee">
+
+          <p></p>
+          <label for="photoInput">攝影師（NT$ 2000）：</label>
+          <input class="input" id="photoInput" type="checkbox" onclick="calPhoto() ">
+          <input class="disp" id="photoDisp" readonly>
+          <input class="fee" id="photoOutput" type="text" value="0" readonly name="photographer_fee">
+
+
+          <p></p>
+          <label>加租時間（NT$ 500/小時）：</label>
+          <input class="input" id="addTimeInput" type="range" value="0" min="0" max="6" step="1" name="additional_hours">
+          <input class="disp" id="addTimeDisp" value="0" readonly>
+          <input class="fee" id="addTimeOutput" type="text" value="0" readonly name="additional_time_fee">
+
+          <p></p>
+          <label>攝影妝（NT$ 2000/人）：</label>
+          <input class="input" id="makeUpInput" type="range" value="0" min="0" max="6" step="1" name="make_up_amount">
+          <input class="disp" id="makeUpDisp" value="0" readonly>
+          <input class="fee" id="makeUpOutput" type="text" value="0" readonly name="make_up_fee">
+
+          <p></p>
+          <label>假睫毛（NT$ 300/人）：</label>
+          <input class="input" id="eyelashesInput" type="range" value="0" min="0" max="6" step="1" name="eyelashes_amount">
+          <input class="disp" id="eyelashesDisp" value="0" readonly>
+          <input class="fee" id="eyelashesOutput" type="text" value="0" readonly name="eyelashes_fee">
+          <label>髮型：</label>
+
+          <!-- implement option to select every hairstyle multiple times -->
+
+          <p></p>
+          <label for="hair1Input" class="hair">FRENCH CHIGNON（NT$ 1500/人）：</label>
+          <input class="input" id="hair1Input" type="range" value="0" min="0" max="6" step="1" name="hair1">
+          <input class="disp" id="hair1Disp" value="0" readonly>
+          <input class="fee" id="hair1Output" type="text" value="0" readonly name="hair1_fee">
+
+          <p></p>
+          <label for="hair2Input" class="hair">DIRNDL HAIR（NT$1500/人）：</label>
+          <input class="input" id="hair2Input" type="range" value="0" min="0" max="6" step="1" name="hair2">
+          <input class="disp" id="hair2Disp" value="0" readonly>
+          <input class="fee" id="hair2Output" type="text" value="0" readonly name="hair2_fee">
+
+          <p></p>
+          <label for="hair3Input" class="hair">VICTORY ROLLS（NT$ 2000/人）：</label>
+          <input class="input" id="hair3Input" type="range" value="0" min="0" max="6" step="1" name="hair3">
+          <input class="disp" id="hair3Disp" value="0" readonly>
+          <input class="fee" id="hair3Output" type="text" value="0" readonly name="hair3_fee">
+
+          <p></p>
+          <label for="hair4Input" class="hair">BEEHIVE（$2000/人）：</label>
+          <input class="input" id="hair4Input" type="range" value="0" min="0" max="6" step="1" name="hair4">
+          <input class="disp" id="hair4Disp" value="0" readonly>
+          <input class="fee" id="hair4Output" type="text" value="0" readonly name="hair4_fee">
+
+          <p></p>
+          <label for="hair5Input" class="hair">FINGER WAVES（NT$ 2500/人）：</label>
+          <input class="input" id="hair5Input" type="range" value="0" min="0" max="6" step="1" name="hair5">
+          <input class="disp" id="hair5Disp" value="0" readonly>
+          <input class="fee" id="hair5Output" type="text  " value="0" readonly name="hair5_fee">
+
+          <p></p>
+          <label for="hair6Input" class="hair">PEEKABOO（NT$2500/人）：</label>
+          <input class="input" id="hair6Input" type="range" value="0" min="0" max="6" step="1" name="hair6">
+          <input class="disp" id="hair6Disp" value="0" readonly>
+          <input class="fee" id="hair6Output" type="text" value="0" readonly name="hair6_fee">
+
+          <p></p>
+          <label for="hair7Input" class="hair">PAGEBOY（NT$ 3000/人）：</label>
+          <input class="input" id="hair7Input" type="range" value="0" min="0" max="6" step="1" name="hair7">
+          <input class="disp" id="hair7Disp" value="0" readonly>
+          <input class="fee" id="hair7Output" type="text" value="0" readonly name="hair7_fee">
+
+          <p></p>
+          <label for="hair8Input" class="hair">PIN CURLS （NT$3000/人）：</label>
+          <input class="input" id="hair8Input" type="range" value="0" min="0" max="6" step="1" name="hair8">
+          <input class="disp" id="hair8Disp" value="0" readonly>
+          <input class="fee" id="hair8Output" type="text" value="0" readonly name="hair8_fee">
+
+          <p></p>
+          <label>男士髮型（NT$ 3000/人）：</label>
+          <input class="input" id="hairGentInput" type="range" value="0" min="0" max="6" step="1" name="gents_hair_amount">
+          <input class="disp" id="hairGentDisp" value="0" readonly>
+          <input class="fee" id="hairGentOutput" type="text" value="0" readonly name="gents_hair_fee">
+
+          <!-- get text (labels) of sums and discounts to right align -->
+
+          <p></p>
+          <button class="button" type="button" id="calPriceButton">總計</button>
+          <p></p>
+          <label class="grayText">總計（折扣前）：</label>
+          <input class="grayNoBoarder" id="preDiscountOutput" type="text" value="0" readonly name="pre_discount_fee">
+          <p></p>
+          <label class="grayText">攝影妝 + 髮型折扣：</label>
+          <input class="grayNoBoarder" id="discountOutput" type="text" value="0" readonly name="hair_makeup_discount">
+          <hr>
+          <p></p>
+          <label>總計：</label>
+          <input class="feeNoBoarder" id="totalFeeOutput" type="text" value="0" readonly name="total_fee">
+
+          <h2>其他備註</h2>
+          <p></p>
+          <textarea class="" id="messageInput" maxlength="1000" rows="4" placeholder="如果您有任何其他需求歡迎一並告知，謝謝！" name="special_requests"></textarea>
+
+
+        </div>
+        <button class="button-success pure-button button-xlarge">
+          <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+      </div>
+
+      <!-- Customise the Thankyou Message People See when they submit the form: -->
+      <div class="thankyou_message" style="display:none;">
+        <h2>
+          <em>Thanks</em> for contacting us! We will get back to you soon!</h2>
+      </div>
+
+  </form>
+  </section>
+  <!-- Submit the Form to Google Using "AJAX" -->
+  <script data-cfasync="false" src="form-submission-handler.js"></script>
+  <!-- END -->
+
+  <script>
+    var basicFee = basicOutput.value;
+    var photoFee = 0;
+    var addTimeFee = 0;
+    var makeUpFee = 0;
+    var eyelashesFee = 0;
+    var hair1Fee = 0;
+    var hair2Fee = 0;
+    var hair3Fee = 0;
+    var hair4Fee = 0;
+    var hair5Fee = 0;
+    var hair6Fee = 0;
+    var hair7Fee = 0;
+    var hair8Fee = 0;
+    var hairGentFee = 0;
+    var makeUpCount = 0;
+    var hairCount = 0;
+    var discount = 0;
+
+    function calPhoto() {
+      if (photoInput.checked == true) {
+        var photoFee = 2000;
+        photoOutput.value = 2000;
+      }
+      else {
+        var photoFee = 0;
+        photoOutput.value = 0;
+      }
+    }
+    photoOutput.value = photoFee;
+
+    function calAddTime() {
+      addTimeDisp.value = addTimeInput.value + ' 小時';
+      if (addTimeInput.value == 0) {
+        addTimeOutput.value = 0;
+      }
+      else {
+        addTimeOutput.value = (addTimeInput.value * 500);
+      }
+      // var addTimeFee = addTimeFeeOutput.value;
+    }
+
+    addTimeInput.oninput = calAddTime;
+
+    function calMakeUp() {
+      makeUpDisp.value = makeUpInput.value + ' 人';
+      makeUpOutput.value = makeUpInput.value * 2000;
+      var makeUpFee = makeUpOutput.value;
+    }
+
+    makeUpInput.oninput = calMakeUp;
+
+    function calEyelashes() {
+      eyelashesDisp.value = eyelashesInput.value + ' 人';
+      eyelashesOutput.value = eyelashesInput.value * 300;
+      var eyelashesFee = eyelashesOutput.value;
+    }
+
+    eyelashesInput.oninput = calEyelashes;
+
+    function calHair1() {
+      hair1Disp.value = hair1Input.value + ' 人';
+      hair1Output.value = hair1Input.value * 1500;
+      var hair1Fee = hair1Output.value;
+    }
+
+    hair1Input.oninput = calHair1;
+
+    function calHair2() {
+      hair2Disp.value = hair2Input.value + ' 人';
+      hair2Output.value = hair2Input.value * 1500;
+      var hair2Fee = hair2Output.value;
+    }
+
+    hair2Input.oninput = calHair2;
+
+    function calHair3() {
+      hair3Disp.value = hair3Input.value + ' 人';
+      hair3Output.value = hair3Input.value * 2000;
+      var hair3Fee = hair3Output.value;
+    }
+
+    hair3Input.oninput = calHair3;
+
+    function calHair4() {
+      hair4Disp.value = hair4Input.value + ' 人';
+      hair4Output.value = hair4Input.value * 2000;
+      var hair4Fee = hair4Output.value;
+    }
+
+    hair4Input.oninput = calHair4;
+
+    function calHair5() {
+      hair5Disp.value = hair5Input.value + ' 人';
+      hair5Output.value = hair5Input.value * 2500;
+      var hair5Fee = hair5Output.value;
+    }
+
+    hair5Input.oninput = calHair5;
+
+    function calHair6() {
+      hair6Disp.value = hair6Input.value + ' 人';
+      hair6Output.value = hair6Input.value * 2500;
+      var hair6Fee = hair6Output.value;
+    }
+
+    hair6Input.oninput = calHair6;
+
+    function calHair7() {
+      hair7Disp.value = hair7Input.value + ' 人';
+      hair7Output.value = hair7Input.value * 3000;
+      var hair7Fee = hair7Output.value;
+    }
+
+    hair7Input.oninput = calHair7;
+
+    function calHair8() {
+      hair8Disp.value = hair8Input.value + ' 人';
+      hair8Output.value = hair8Input.value * 3000;
+      var hair8Fee = hair8Output.value;
+    }
+
+    hair8Input.oninput = calHair8;
+
+    function calhairGent() {
+      hairGentDisp.value = hairGentInput.value + ' 人';
+      hairGentOutput.value = hairGentInput.value * 3000;
+      var hairGentFee = hairGentOutput.value;
+    }
+
+    hairGentInput.oninput = calhairGent;
+
+    function calPrice() {
+      var basicFee = basicOutput.value;
+      var photoFee = photoOutput.value;
+      var addTimeFee = addTimeOutput.value;
+      var makeUpFee = makeUpOutput.value;
+      var eyelashesFee = eyelashesOutput.value;
+      var hair1Fee = hair1Output.value;
+      var hair2Fee = hair2Output.value;
+      var hair3Fee = hair3Output.value;
+      var hair4Fee = hair4Output.value;
+      var hair5Fee = hair5Output.value;
+      var hair6Fee = hair6Output.value;
+      var hair7Fee = hair7Output.value;
+      var hair8Fee = hair8Output.value;
+      var hairGentFee = hairGentOutput.value;
+      var preDiscount = 0;
+      var discount = 0;
+      var totalFee = 0;
+
+      var preDiscount =
+        Number(basicFee) + Number(photoFee) + Number(addTimeFee) + Number(makeUpFee) + Number(eyelashesFee) + Number(hair1Fee) + Number(hair2Fee) + Number(hair3Fee) + Number(hair4Fee) + Number(hair5Fee) + Number(hair6Fee) + Number(hair7Fee) + Number(hair8Fee) + Number(hairGentFee);
+
+      preDiscountOutput.value = 'NT$ ' + preDiscount;
+
+      var makeUpCount = makeUpInput.value;
+
+      var hairCount =
+        Number(hair1Input.value) + Number(hair2Input.value) + Number(hair3Input.value) + Number(hair4Input.value) + Number(hair5Input.value) + Number(hair6Input.value) + Number(hair7Input.value) + Number(hair8Input.value);
+
+      if (Number(hairCount) <= Number(makeUpCount)) {
+        var discount = hairCount * 500;
+      } else if (Number(hairCount) > Number(makeUpCount)) {
+        var discount = makeUpCount * 500;
+      }
+      discountOutput.value = '-NT$ ' + discount;
+
+      var totalFee = preDiscount - discount;
+      totalFeeOutput.value = 'NT$ ' + totalFee;
+    }
+
+    calPriceButton.onclick = calPrice;
+
+  </script>
+
+</body>
+
+</html>
