@@ -149,6 +149,11 @@ name="total_fee"
     background-color: whitesmoke;
   }
 
+  .required {
+    color: red;
+    font-size: 170%;
+  }
+
   /* <!-- @media only screen and (max-width: 360px) --> */
 </style>
 
@@ -174,14 +179,14 @@ name="total_fee"
         <div id="contactDetails">
           <h2>聯絡資料</h2>
           <p></p>
-          <label>姓名：</label>
-          <input class="contact" id="nameInput" value="(REQUIRED)" name="name">
+          <label>姓名：</label><span class="required">*</span>
+          <input class="contact" id="nameInput" value="" name="name" required="required">
           <p></p>
-          <label>EMAIL：</label>
-          <input class="contact" id="emailInput" type="email" value="(REQUIRED)" name="email">
+          <label>EMAIL：</label><span class="required">*</span>
+          <input class="contact" id="emailInput" type="email" value="" name="email" required="required">
           <p></p>
-          <label>電話：</label>
-          <input class="contact" id="phoneInput" type="tel" value="(OPTIONAL)" name="phone">
+          <label>電話：</label><span class="required">*</span>
+          <input class="contact" id="phoneInput" type="tel" value="" name="phone" required="required">
         </div>
 
         <h2>價格表</h2>
@@ -199,19 +204,19 @@ name="total_fee"
 
           <p></p>
           <label>加租時間（NT$ 500/小時）：</label>
-          <input class="input" id="addTimeInput" type="range" value="0" min="0" max="6" step="1" name="additional_hours">
+          <input class="input" id="addTimeInput" type="range" value="0" min="0" max="6" step="1" name="additional_hours" onchange="change()">
           <input class="disp" id="addTimeDisp" value="0" readonly>
           <input class="fee" id="addTimeOutput" type="text" value="0" readonly name="additional_time_fee">
 
           <p></p>
           <label>攝影妝（NT$ 2000/人）：</label>
-          <input class="input" id="makeUpInput" type="range" value="0" min="0" max="6" step="1" name="make_up_amount">
+          <input class="input" id="makeUpInput" type="range" value="0" min="0" max="6" step="1" name="make_up_amount" onchange="change()">
           <input class="disp" id="makeUpDisp" value="0" readonly>
           <input class="fee" id="makeUpOutput" type="text" value="0" readonly name="make_up_fee">
 
           <p></p>
           <label>假睫毛（NT$ 300/人）：</label>
-          <input class="input" id="eyelashesInput" type="range" value="0" min="0" max="6" step="1" name="eyelashes_amount">
+          <input class="input" id="eyelashesInput" type="range" value="0" min="0" max="6" step="1" name="eyelashes_amount" onchange="change()">
           <input class="disp" id="eyelashesDisp" value="0" readonly>
           <input class="fee" id="eyelashesOutput" type="text" value="0" readonly name="eyelashes_fee">
           <label>髮型：</label>
@@ -220,72 +225,72 @@ name="total_fee"
 
           <p></p>
           <label for="hair1Input" class="hair">FRENCH CHIGNON（NT$ 1500/人）：</label>
-          <input class="input" id="hair1Input" type="range" value="0" min="0" max="6" step="1" name="hair1">
+          <input class="input" id="hair1Input" type="range" value="0" min="0" max="6" step="1" name="hair1" onchange="change()">
           <input class="disp" id="hair1Disp" value="0" readonly>
           <input class="fee" id="hair1Output" type="text" value="0" readonly name="hair1_fee">
 
           <p></p>
           <label for="hair2Input" class="hair">DIRNDL HAIR（NT$1500/人）：</label>
-          <input class="input" id="hair2Input" type="range" value="0" min="0" max="6" step="1" name="hair2">
+          <input class="input" id="hair2Input" type="range" value="0" min="0" max="6" step="1" name="hair2" onchange="change()">
           <input class="disp" id="hair2Disp" value="0" readonly>
           <input class="fee" id="hair2Output" type="text" value="0" readonly name="hair2_fee">
 
           <p></p>
           <label for="hair3Input" class="hair">VICTORY ROLLS（NT$ 2000/人）：</label>
-          <input class="input" id="hair3Input" type="range" value="0" min="0" max="6" step="1" name="hair3">
+          <input class="input" id="hair3Input" type="range" value="0" min="0" max="6" step="1" name="hair3" onchange="change()">
           <input class="disp" id="hair3Disp" value="0" readonly>
           <input class="fee" id="hair3Output" type="text" value="0" readonly name="hair3_fee">
 
           <p></p>
           <label for="hair4Input" class="hair">BEEHIVE（$2000/人）：</label>
-          <input class="input" id="hair4Input" type="range" value="0" min="0" max="6" step="1" name="hair4">
+          <input class="input" id="hair4Input" type="range" value="0" min="0" max="6" step="1" name="hair4" onchange="change()">
           <input class="disp" id="hair4Disp" value="0" readonly>
           <input class="fee" id="hair4Output" type="text" value="0" readonly name="hair4_fee">
 
           <p></p>
           <label for="hair5Input" class="hair">FINGER WAVES（NT$ 2500/人）：</label>
-          <input class="input" id="hair5Input" type="range" value="0" min="0" max="6" step="1" name="hair5">
+          <input class="input" id="hair5Input" type="range" value="0" min="0" max="6" step="1" name="hair5" onchange="change()">
           <input class="disp" id="hair5Disp" value="0" readonly>
           <input class="fee" id="hair5Output" type="text  " value="0" readonly name="hair5_fee">
 
           <p></p>
           <label for="hair6Input" class="hair">PEEKABOO（NT$2500/人）：</label>
-          <input class="input" id="hair6Input" type="range" value="0" min="0" max="6" step="1" name="hair6">
+          <input class="input" id="hair6Input" type="range" value="0" min="0" max="6" step="1" name="hair6" onchange="change()">
           <input class="disp" id="hair6Disp" value="0" readonly>
           <input class="fee" id="hair6Output" type="text" value="0" readonly name="hair6_fee">
 
           <p></p>
           <label for="hair7Input" class="hair">PAGEBOY（NT$ 3000/人）：</label>
-          <input class="input" id="hair7Input" type="range" value="0" min="0" max="6" step="1" name="hair7">
+          <input class="input" id="hair7Input" type="range" value="0" min="0" max="6" step="1" name="hair7" onchange="change()">
           <input class="disp" id="hair7Disp" value="0" readonly>
           <input class="fee" id="hair7Output" type="text" value="0" readonly name="hair7_fee">
 
           <p></p>
           <label for="hair8Input" class="hair">PIN CURLS （NT$3000/人）：</label>
-          <input class="input" id="hair8Input" type="range" value="0" min="0" max="6" step="1" name="hair8">
+          <input class="input" id="hair8Input" type="range" value="0" min="0" max="6" step="1" name="hair8" onchange="change()">
           <input class="disp" id="hair8Disp" value="0" readonly>
           <input class="fee" id="hair8Output" type="text" value="0" readonly name="hair8_fee">
 
           <p></p>
           <label>男士髮型（NT$ 3000/人）：</label>
-          <input class="input" id="hairGentInput" type="range" value="0" min="0" max="6" step="1" name="gents_hair_amount">
+          <input class="input" id="hairGentInput" type="range" value="0" min="0" max="6" step="1" name="gents_hair_amount" onchange="change()">
           <input class="disp" id="hairGentDisp" value="0" readonly>
           <input class="fee" id="hairGentOutput" type="text" value="0" readonly name="gents_hair_fee">
 
           <!-- get text (labels) of sums and discounts to right align -->
 
           <p></p>
-          <button class="button" type="button" id="calPriceButton">總計</button>
+         <!-- <button class="button" type="button" id="calPriceButton">總計</button<> -->
           <p></p>
           <label class="grayText">總計（折扣前）：</label>
-          <input class="grayNoBoarder" id="preDiscountOutput" type="text" value="0" readonly name="pre_discount_fee">
+          <input class="grayNoBoarder" id="preDiscountOutput" type="text" value="3000" readonly name="pre_discount_fee">
           <p></p>
           <label class="grayText">攝影妝 + 髮型折扣：</label>
           <input class="grayNoBoarder" id="discountOutput" type="text" value="0" readonly name="hair_makeup_discount">
           <hr>
           <p></p>
           <label>總計：</label>
-          <input class="feeNoBoarder" id="totalFeeOutput" type="text" value="0" readonly name="total_fee">
+          <input class="feeNoBoarder" id="totalFeeOutput" type="text" value="3000" readonly name="total_fee">
 
           <h2>其他備註</h2>
           <p></p>
@@ -294,7 +299,7 @@ name="total_fee"
 
         </div>
         <button class="button-success pure-button button-xlarge">
-          <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+          <i class="fa fa-paper-plane"></i>&nbsp;送出</button>
       </div>
 
       <!-- Customise the Thankyou Message People See when they submit the form: -->
@@ -328,6 +333,10 @@ name="total_fee"
     var hairCount = 0;
     var discount = 0;
 
+    function change() {
+      calPrice();
+    } 
+
     function calPhoto() {
       if (photoInput.checked == true) {
         var photoFee = 2000;
@@ -337,6 +346,7 @@ name="total_fee"
         var photoFee = 0;
         photoOutput.value = 0;
       }
+      calPrice();
     }
     photoOutput.value = photoFee;
 
@@ -481,7 +491,7 @@ name="total_fee"
       totalFeeOutput.value = 'NT$ ' + totalFee;
     }
 
-    calPriceButton.onclick = calPrice;
+    /*calPriceButton.onclick = calPrice;*/
 
   </script>
 
