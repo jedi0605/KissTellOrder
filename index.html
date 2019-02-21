@@ -5,38 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kiss & Tell Vintage">
-  <title>Kiss &amp Tell Vintage Photography Order Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>bootstrap Order Form</title>
 </head>
-<!-- Data
-name="name"
-name="email"
-name="phone"
-name="basic_fee"
-name="photographer_fee"
-name="additional_hours"
-name="additional_time_fee"
-name="make_up_amount"
-name="make_up_fee"
-name="eyelashes_amount"
-name="eyelashes_fee"
-name="hair1"
-name="hair2"
-name="hair3"
-name="hair4"
-name="hair5"
-name="hair6"
-name="hair7"
-name="hair8"
-name="gents_hair_amount"
-name="gents_hair_fee"
-name="pre_discount_fee"
-name="hair_makeup_discount"
-name="total_fee"
--->
+
 <style>
   @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
-  html {
+  /* html {
     font: 12px sans-serif;
   }
 
@@ -152,7 +129,7 @@ name="total_fee"
   .required {
     color: red;
     font-size: 170%;
-  }
+  } */
 
   /* <!-- @media only screen and (max-width: 360px) --> */
 </style>
@@ -165,154 +142,424 @@ name="total_fee"
   <!-- Style The Contact Form How Ever You Prefer -->
   <!-- <link rel="stylesheet" href="style.css"> -->
 
-  <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbzwBVO_2IvD9qX2b_8fKsj1Qj6zDQedVbycn-Zg/exec">
-    <!-- change the form action to your script url -->
+  <section id="cover">
+    <div id="cover-caption">
 
-    <section id="mainsection">
+      <div id="container" class="container">
+        <div class="row">
+          <div class="col-sm-8 offset-sm-2 text-center">
+            <h1 class="display-4">Kiss & Tell 復古攝影</h1>
+            <br></br>
 
-      <h1>Kiss &amp Tell 復古攝影</h1>
-      <!-- Changes made to the order form after pressing "calculate total" are not automatically recalculated -->
-      <div class="form-elements">
-        <!-- <fieldset class="pure-group"> -->
-        <!-- <label>姓名：</label>
-        <input class="contact" id="name" name="name" placeholder="What your Mom calls you" /> -->
-        <div id="contactDetails">
-          <h2>聯絡資料</h2>
-          <p></p>
-          <label>姓名：</label><span class="required">*</span>
-          <input class="contact" id="nameInput" value="" name="name" required="required">
-          <p></p>
-          <label>EMAIL：</label><span class="required">*</span>
-          <input class="contact" id="emailInput" type="email" value="" name="email" required="required">
-          <p></p>
-          <label>電話：</label><span class="required">*</span>
-          <input class="contact" id="phoneInput" type="tel" value="" name="phone" required="required">
+            <!-- <form class="gform form" method="POST" data-email="example@email.net"
+              action="https://script.google.com/macros/s/AKfycbzwBVO_2IvD9qX2b_8fKsj1Qj6zDQedVbycn-Zg/exec"> -->
+
+
+            <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+              action="https://script.google.com/macros/s/AKfycbzwBVO_2IvD9qX2b_8fKsj1Qj6zDQedVbycn-Zg/exec">
+
+
+              <div class="form-elements">
+                <h2 class="justify-content-center">連絡資料</h2>
+                <br></br>
+                <div class="form-group row">
+                  <div class="form-group col-md-6">
+                    <label>姓名：</label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="王小明" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="form-group col-md-6">
+                    <label>Email：</label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" name="email"
+                      placeholder="name@example.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="form-group col-md-6">
+                    <label>電話：</label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" id="phone" name="phone" placeholder="09123456789">
+                  </div>
+                </div>
+
+                <br></br>
+                <h2 class="justify-content-center">價格表</h2>
+                <br></br>
+
+                <div class="form-group row">
+                  <div class="form-group col-md-4">
+                    <label>基本費用（含場租 3 小時）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input type="text" class="form-control" id="basicOutput" name="basic_fee" value="3000" readonly>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="form-group col-md-4">
+                    <label for="photoInput">攝影師（NT$ 2000）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="photoInput" type="checkbox" onclick="calPhoto() ">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="photoOutput" type="text" value="0" readonly name="photographer_fee">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="form-group col-md-4">
+                    <label>加租時間（NT$ 500/小時）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="addTimeInput" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 小時</option>
+                      <option value="2">2 小時</option>
+                      <option value="3">3 小時</option>
+                      <option value="4">4 小時</option>
+                      <option value="5">5 小時</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="addTimeDisp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="addTimeOutput" type="text" value="0" readonly
+                      name="additional_time_fee">
+                  </div>
+                </div>
+
+                <!-- <p></p>
+                <label>攝影妝（NT$ 2000/人）：</label>
+                <input class="input" id="makeUpInput" type="range" value="0" min="0" max="6" step="1" name="make_up_amount"
+                  onchange="change()">
+                <input class="disp" id="makeUpDisp" value="0" readonly>
+                <input class="fee" id="makeUpOutput" type="text" value="0" readonly name="make_up_fee"> -->
+
+                <div class="form-group row">
+                  <div class="form-group col-md-4">
+                    <label>攝影妝（NT$ 2000/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="makeUpInput" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="makeUpDisp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="makeUpOutput" type="text" value="0" readonly name="make_up_fee">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>假睫毛（NT$ 300/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="eyelashesInput" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="eyelashesDisp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="eyelashesOutput" type="text" value="0" readonly
+                      name="eyelashes_fee">
+                  </div>
+                </div>
+
+                <br></br>
+                <h2 class="justify-content-center">髮型</h2>
+                <br></br>
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>FRENCH CHIGNON（NT$ 1500/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="hair1Input" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="hair1Disp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="hair1Output" type="text" value="0" readonly name="hair1_fee">
+                  </div>
+                </div>
+
+                <!-- <label for="hair2Input" class="hair">DIRNDL HAIR（NT$1500/人）：</label>
+                <input class="input" id="hair2Input" type="range" value="0" min="0" max="6" step="1" name="hair2"
+                  onchange="change()">
+                <input class="disp" id="hair2Disp" value="0" readonly>
+                <input class="fee" id="hair2Output" type="text" value="0" readonly name="hair2_fee"> -->
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>DIRNDL HAIR（NT$1500/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="hair2Input" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="hair2Disp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="hair2Output" type="text" value="0" readonly name="hair2_fee">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>VICTORY ROLLS（NT$ 2000/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="hair3Input" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="hair3Disp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="hair3Output" type="text" value="0" readonly name="hair3_fee">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>BEEHIVE（$2000/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="hair4Input" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="hair4Disp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="hair4Output" type="text" value="0" readonly name="hair4_fee">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>FINGER WAVES（NT$ 2500/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="hair5Input" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="hair5Disp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="hair5Output" type="text" value="0" readonly name="hair5_fee">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>PEEKABOO（NT$2500/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="hair6Input" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="hair6Disp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="hair6Output" type="text" value="0" readonly name="hair6_fee">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>PAGEBOY（NT$ 3000/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="hair7Input" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="hair7Disp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="hair7Output" type="text" value="0" readonly name="hair7_fee">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>PIN CURLS （NT$3000/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="hair8Input" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="hair8Disp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="hair8Output" type="text" value="0" readonly name="hair8_fee">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label>男士髮型（NT$ 3000/人）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <select class="custom-select mr-sm-2" id="hairGentInput" onchange="change()">
+                      <option selected>Choose...</option>
+                      <option value="1">1 人</option>
+                      <option value="2">2 人</option>
+                      <option value="3">3 人</option>
+                      <option value="4">4 人</option>
+                      <option value="5">5 人</option>
+                      <option value="6">6 人</option>
+                    </select>
+                  </div>
+                  <input class="d-none" id="hairGentDisp" value="0" readonly>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="hairGentOutput" type="text" value="0" readonly
+                      name="gents_hair_fee">
+                  </div>
+                </div>
+
+                <div class="form-row ">
+                  <div class="form-group col-md-4">
+                    <label>總計（折扣前）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" type="text" id="preDiscountOutput" value="3000" readonly
+                      name="pre_discount_fee">
+                  </div>
+                </div>
+
+                <div class="form-row ">
+                  <div class="form-group col-md-4">
+                    <label>攝影妝 + 髮型折扣：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" type="text" id="discountOutput" value="0" readonly
+                      name="hair_makeup_discount">
+                  </div>
+                </div>
+                <hr>
+
+                <div class="form-row ">
+                  <div class="form-group col-md-4">
+                    <label>總計：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" type="text" id="totalFeeOutput" value="3000" readonly name="total_fee">
+                  </div>
+                </div>
+
+                <br></br>
+                <h2 class="justify-content-center">其他備註</h2>
+                <br></br>
+                <div class="form-group">
+                  <textarea class="form-control" rows="5" id="comment" placeholder="如果您有任何其他需求歡迎一並告知，謝謝！"
+                    name="special_requests"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success ">送出</button>
+              </div>
+
+              <div class="thankyou_message" style="display:none;">
+                <h2>
+                  <em>Thanks</em> for contacting us! We will get back to you soon!</h2>
+              </div>
+            </form>
+          </div>
+          <br>
         </div>
-
-        <h2>價格表</h2>
-        <div id="pricing">
-          <p></p>
-          <label>基本費用（含場租 3 小時）：</label>
-          <input class="feeNoBoarder" id="basicOutput" type="text" value="3000" readonly name="basic_fee">
-
-          <p></p>
-          <label for="photoInput">攝影師（NT$ 2000）：</label>
-          <input class="input" id="photoInput" type="checkbox" onclick="calPhoto() ">
-          <input class="disp" id="photoDisp" readonly>
-          <input class="fee" id="photoOutput" type="text" value="0" readonly name="photographer_fee">
-
-
-          <p></p>
-          <label>加租時間（NT$ 500/小時）：</label>
-          <input class="input" id="addTimeInput" type="range" value="0" min="0" max="6" step="1" name="additional_hours" onchange="change()">
-          <input class="disp" id="addTimeDisp" value="0" readonly>
-          <input class="fee" id="addTimeOutput" type="text" value="0" readonly name="additional_time_fee">
-
-          <p></p>
-          <label>攝影妝（NT$ 2000/人）：</label>
-          <input class="input" id="makeUpInput" type="range" value="0" min="0" max="6" step="1" name="make_up_amount" onchange="change()">
-          <input class="disp" id="makeUpDisp" value="0" readonly>
-          <input class="fee" id="makeUpOutput" type="text" value="0" readonly name="make_up_fee">
-
-          <p></p>
-          <label>假睫毛（NT$ 300/人）：</label>
-          <input class="input" id="eyelashesInput" type="range" value="0" min="0" max="6" step="1" name="eyelashes_amount" onchange="change()">
-          <input class="disp" id="eyelashesDisp" value="0" readonly>
-          <input class="fee" id="eyelashesOutput" type="text" value="0" readonly name="eyelashes_fee">
-          <label>髮型：</label>
-
-          <!-- implement option to select every hairstyle multiple times -->
-
-          <p></p>
-          <label for="hair1Input" class="hair">FRENCH CHIGNON（NT$ 1500/人）：</label>
-          <input class="input" id="hair1Input" type="range" value="0" min="0" max="6" step="1" name="hair1" onchange="change()">
-          <input class="disp" id="hair1Disp" value="0" readonly>
-          <input class="fee" id="hair1Output" type="text" value="0" readonly name="hair1_fee">
-
-          <p></p>
-          <label for="hair2Input" class="hair">DIRNDL HAIR（NT$1500/人）：</label>
-          <input class="input" id="hair2Input" type="range" value="0" min="0" max="6" step="1" name="hair2" onchange="change()">
-          <input class="disp" id="hair2Disp" value="0" readonly>
-          <input class="fee" id="hair2Output" type="text" value="0" readonly name="hair2_fee">
-
-          <p></p>
-          <label for="hair3Input" class="hair">VICTORY ROLLS（NT$ 2000/人）：</label>
-          <input class="input" id="hair3Input" type="range" value="0" min="0" max="6" step="1" name="hair3" onchange="change()">
-          <input class="disp" id="hair3Disp" value="0" readonly>
-          <input class="fee" id="hair3Output" type="text" value="0" readonly name="hair3_fee">
-
-          <p></p>
-          <label for="hair4Input" class="hair">BEEHIVE（$2000/人）：</label>
-          <input class="input" id="hair4Input" type="range" value="0" min="0" max="6" step="1" name="hair4" onchange="change()">
-          <input class="disp" id="hair4Disp" value="0" readonly>
-          <input class="fee" id="hair4Output" type="text" value="0" readonly name="hair4_fee">
-
-          <p></p>
-          <label for="hair5Input" class="hair">FINGER WAVES（NT$ 2500/人）：</label>
-          <input class="input" id="hair5Input" type="range" value="0" min="0" max="6" step="1" name="hair5" onchange="change()">
-          <input class="disp" id="hair5Disp" value="0" readonly>
-          <input class="fee" id="hair5Output" type="text  " value="0" readonly name="hair5_fee">
-
-          <p></p>
-          <label for="hair6Input" class="hair">PEEKABOO（NT$2500/人）：</label>
-          <input class="input" id="hair6Input" type="range" value="0" min="0" max="6" step="1" name="hair6" onchange="change()">
-          <input class="disp" id="hair6Disp" value="0" readonly>
-          <input class="fee" id="hair6Output" type="text" value="0" readonly name="hair6_fee">
-
-          <p></p>
-          <label for="hair7Input" class="hair">PAGEBOY（NT$ 3000/人）：</label>
-          <input class="input" id="hair7Input" type="range" value="0" min="0" max="6" step="1" name="hair7" onchange="change()">
-          <input class="disp" id="hair7Disp" value="0" readonly>
-          <input class="fee" id="hair7Output" type="text" value="0" readonly name="hair7_fee">
-
-          <p></p>
-          <label for="hair8Input" class="hair">PIN CURLS （NT$3000/人）：</label>
-          <input class="input" id="hair8Input" type="range" value="0" min="0" max="6" step="1" name="hair8" onchange="change()">
-          <input class="disp" id="hair8Disp" value="0" readonly>
-          <input class="fee" id="hair8Output" type="text" value="0" readonly name="hair8_fee">
-
-          <p></p>
-          <label>男士髮型（NT$ 3000/人）：</label>
-          <input class="input" id="hairGentInput" type="range" value="0" min="0" max="6" step="1" name="gents_hair_amount" onchange="change()">
-          <input class="disp" id="hairGentDisp" value="0" readonly>
-          <input class="fee" id="hairGentOutput" type="text" value="0" readonly name="gents_hair_fee">
-
-          <!-- get text (labels) of sums and discounts to right align -->
-
-          <p></p>
-         <!-- <button class="button" type="button" id="calPriceButton">總計</button<> -->
-          <p></p>
-          <label class="grayText">總計（折扣前）：</label>
-          <input class="grayNoBoarder" id="preDiscountOutput" type="text" value="3000" readonly name="pre_discount_fee">
-          <p></p>
-          <label class="grayText">攝影妝 + 髮型折扣：</label>
-          <input class="grayNoBoarder" id="discountOutput" type="text" value="0" readonly name="hair_makeup_discount">
-          <hr>
-          <p></p>
-          <label>總計：</label>
-          <input class="feeNoBoarder" id="totalFeeOutput" type="text" value="3000" readonly name="total_fee">
-
-          <h2>其他備註</h2>
-          <p></p>
-          <textarea class="" id="messageInput" maxlength="1000" rows="4" placeholder="如果您有任何其他需求歡迎一並告知，謝謝！" name="special_requests"></textarea>
-
-
-        </div>
-        <button class="button-success pure-button button-xlarge">
-          <i class="fa fa-paper-plane"></i>&nbsp;送出</button>
       </div>
-
-      <!-- Customise the Thankyou Message People See when they submit the form: -->
-      <div class="thankyou_message" style="display:none;">
-        <h2>
-          <em>Thanks</em> for contacting us! We will get back to you soon!</h2>
-      </div>
-
-  </form>
+    </div>
   </section>
+
+
+
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
   <!-- END -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 
   <script>
     var basicFee = basicOutput.value;
@@ -335,7 +582,7 @@ name="total_fee"
 
     function change() {
       calPrice();
-    } 
+    }
 
     function calPhoto() {
       if (photoInput.checked == true) {

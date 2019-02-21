@@ -5,15 +5,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Kiss & Tell Vintage">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>bootstrap Order Form</title>
+  <title>Kiss &amp Tell Vintage Photography Order Form</title>
 </head>
-
+<!-- Data
+name="name"
+name="email"
+name="phone"
+name="basic_fee"
+name="photographer_fee"
+name="additional_hours"
+name="additional_time_fee"
+name="make_up_amount"
+name="make_up_fee"
+name="eyelashes_amount"
+name="eyelashes_fee"
+name="hair1"
+name="hair2"
+name="hair3"
+name="hair4"
+name="hair5"
+name="hair6"
+name="hair7"
+name="hair8"
+name="gents_hair_amount"
+name="gents_hair_fee"
+name="pre_discount_fee"
+name="hair_makeup_discount"
+name="total_fee"
+-->
 <style>
   @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
-  /* html {
+  html {
     font: 12px sans-serif;
   }
 
@@ -129,7 +152,7 @@
   .required {
     color: red;
     font-size: 170%;
-  } */
+  }
 
   /* <!-- @media only screen and (max-width: 360px) --> */
 </style>
@@ -142,186 +165,7 @@
   <!-- Style The Contact Form How Ever You Prefer -->
   <!-- <link rel="stylesheet" href="style.css"> -->
 
-  <section id="cover">
-    <div id="cover-caption">
-
-      <div id="container" class="container">
-        <div class="row">
-          <div class="col-sm-8 offset-sm-2 text-center">
-            <h1 class="display-4">Kiss & Tell 復古攝影</h1>
-            <br></br>
-
-
-            <div class="info-form">
-              <form action="" class="form-inlin justify-content-center">
-
-                <h2 class="justify-content-center">連絡資料</h2>
-                <br></br>
-
-                <div class="form-group row">
-
-                  <div class="form-group col-md-6">
-                    <label>姓名：</label>
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="name" placeholder="王小明" required>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-6">
-                    <label>Email：</label>
-                  </div>
-                  <div class="col-md-6">
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                      placeholder="name@example.com" required>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-6">
-                    <label>電話：</label>
-                  </div>
-                  <div class="col-md-6">
-                    <input type="text" class="form-control" id="phone" placeholder="09123456789">
-                  </div>
-                </div>
-
-                <br></br>
-                <h2 class="justify-content-center">價格表</h2>
-                <br></br>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-4">
-                    <label>基本費用（含場租 3 小時）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input type="text" class="form-control" id="basicOutput" value="3000" readonly>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-4">
-                    <label for="photoInput">攝影師（NT$ 2000）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="photoInput" type="checkbox" onclick="calPhoto() ">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="photoOutput" type="text" value="0" readonly name="photographer_fee">
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-4">
-                    <label>加租時間（NT$ 500/小時）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="addTimeInput" onchange="change()">
-                      <option selected>Choose...</option>
-                      <option value="1">1 小時</option>
-                      <option value="2">2 小時</option>
-                      <option value="3">3 小時</option>
-                      <option value="4">4 小時</option>
-                      <option value="5">5 小時</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="addTimeDisp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="addTimeOutput" type="text" value="0" readonly
-                      name="additional_time_fee">
-                  </div>
-                </div>
-
-                <!-- <p></p>
-                <label>攝影妝（NT$ 2000/人）：</label>
-                <input class="input" id="makeUpInput" type="range" value="0" min="0" max="6" step="1" name="make_up_amount"
-                  onchange="change()">
-                <input class="disp" id="makeUpDisp" value="0" readonly>
-                <input class="fee" id="makeUpOutput" type="text" value="0" readonly name="make_up_fee"> -->
-
-                <div class="form-group row">
-                  <div class="form-group col-md-4">
-                    <label>攝影妝（NT$ 2000/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="makeUpInput" onchange="change()">
-                      <option selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="makeUpDisp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="makeUpOutput" type="text" value="0" readonly name="make_up_fee">
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>假睫毛（NT$ 300/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="eyelashesInput" onchange="change()">
-                      <option selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="eyelashesDisp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="eyelashesOutput" type="text" value="0" readonly
-                      name="eyelashes_fee">
-                  </div>
-                </div>
-
-                <br></br>
-                <h2 class="justify-content-center">髮型：</h2>
-                <br></br>                
-
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>FRENCH CHIGNON（NT$ 1500/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="hair1Input" onchange="change()">
-                      <option selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="hair1Disp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="hair1Output" type="text" value="0" readonly
-                      name="hair1_fee">
-                  </div>
-                </div>
-
-                <button type="submit" class="btn btn-success ">送出</button>
-              </form>
-            </div>
-            <br>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <form class="gform form" method="POST" data-email="example@email.net"
+  <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
     action="https://script.google.com/macros/s/AKfycbzwBVO_2IvD9qX2b_8fKsj1Qj6zDQedVbycn-Zg/exec">
     <!-- change the form action to your script url -->
 
@@ -334,7 +178,7 @@
         <!-- <label>姓名：</label>
         <input class="contact" id="name" name="name" placeholder="What your Mom calls you" /> -->
         <div id="contactDetails">
-
+          <h2>聯絡資料</h2>
           <p></p>
           <label>姓名：</label><span class="required">*</span>
           <input class="contact" id="nameInput" value="" name="name" required="required">
@@ -352,37 +196,43 @@
           <label>基本費用（含場租 3 小時）：</label>
           <input class="feeNoBoarder" id="basicOutput" type="text" value="3000" readonly name="basic_fee">
 
+          <p></p>
+          <label for="photoInput">攝影師（NT$ 2000）：</label>
+          <input class="input" id="photoInput" type="checkbox" onclick="calPhoto() ">
+          <input class="disp" id="photoDisp" readonly>
+          <input class="fee" id="photoOutput" type="text" value="0" readonly name="photographer_fee">
 
-          <!-- <p></p>
+
+          <p></p>
           <label>加租時間（NT$ 500/小時）：</label>
           <input class="input" id="addTimeInput" type="range" value="0" min="0" max="6" step="1" name="additional_hours"
             onchange="change()">
           <input class="disp" id="addTimeDisp" value="0" readonly>
-          <input class="fee" id="addTimeOutput" type="text" value="0" readonly name="additional_time_fee"> -->
+          <input class="fee" id="addTimeOutput" type="text" value="0" readonly name="additional_time_fee">
 
-          <!-- <p></p>
+          <p></p>
           <label>攝影妝（NT$ 2000/人）：</label>
           <input class="input" id="makeUpInput" type="range" value="0" min="0" max="6" step="1" name="make_up_amount"
             onchange="change()">
           <input class="disp" id="makeUpDisp" value="0" readonly>
-          <input class="fee" id="makeUpOutput" type="text" value="0" readonly name="make_up_fee"> -->
+          <input class="fee" id="makeUpOutput" type="text" value="0" readonly name="make_up_fee">
 
-          <!-- <p></p>
+          <p></p>
           <label>假睫毛（NT$ 300/人）：</label>
           <input class="input" id="eyelashesInput" type="range" value="0" min="0" max="6" step="1"
             name="eyelashes_amount" onchange="change()">
           <input class="disp" id="eyelashesDisp" value="0" readonly>
-          <input class="fee" id="eyelashesOutput" type="text" value="0" readonly name="eyelashes_fee"> -->
+          <input class="fee" id="eyelashesOutput" type="text" value="0" readonly name="eyelashes_fee">
           <label>髮型：</label>
 
           <!-- implement option to select every hairstyle multiple times -->
 
           <p></p>
-          <!-- <label for="hair1Input" class="hair">FRENCH CHIGNON（NT$ 1500/人）：</label>
+          <label for="hair1Input" class="hair">FRENCH CHIGNON（NT$ 1500/人）：</label>
           <input class="input" id="hair1Input" type="range" value="0" min="0" max="6" step="1" name="hair1"
             onchange="change()">
           <input class="disp" id="hair1Disp" value="0" readonly>
-          <input class="fee" id="hair1Output" type="text" value="0" readonly name="hair1_fee"> -->
+          <input class="fee" id="hair1Output" type="text" value="0" readonly name="hair1_fee">
 
           <p></p>
           <label for="hair2Input" class="hair">DIRNDL HAIR（NT$1500/人）：</label>
@@ -477,15 +327,6 @@
   <!-- Submit the Form to Google Using "AJAX" -->
   <script data-cfasync="false" src="form-submission-handler.js"></script>
   <!-- END -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
 
   <script>
     var basicFee = basicOutput.value;
