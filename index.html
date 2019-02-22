@@ -13,6 +13,41 @@
 <style>
   @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
+  @media (min-width:520px) {
+    .display-in-mobile {
+      display: none;
+    }
+  }
+
+  @media (max-width:520px) {
+    .display-in-destop {
+      display: none;
+    }
+  }
+
+  body {
+    background-color: lightGray;
+  }
+
+  #mainsection {
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  section {
+    padding: 15px 5%;
+  }
+
+  h2 {
+    font: sans-serif;
+    color: rgb(250, 169, 182);
+  }
+
+  .form-group.required .control-label:after {
+    content: "*";
+    color: red;
+  }
+
   /* html {
     font: 12px sans-serif;
   }
@@ -28,9 +63,7 @@
     margin: 10px auto;
   }
 
-  section {
-    padding: 3px 5%;
-  }
+
 
   #mainsection {
     background-color: white;
@@ -147,8 +180,19 @@
 
       <div id="container" class="container">
         <div class="row">
-          <div class="col-sm-8 offset-sm-2 text-center">
-            <h1 class="display-4">Kiss & Tell 復古攝影</h1>
+          <div class="col-sm-8 offset-sm-2 text-center" id="mainsection">
+            <br></br>
+            <h1 class="display-4 display-in-destop">Kiss & Tell 復古攝影</h1>
+
+            <div class="form-group row display-in-mobile">
+              <div class="form-group col-md-6">
+                <h1 class="display-4">Kiss & Tell</h1>
+              </div>
+              <div class="col-md-6">
+                <h1 class="display-4">復古攝影</h1>
+              </div>
+            </div>
+
             <br></br>
 
             <!-- <form class="gform form" method="POST" data-email="example@email.net"
@@ -162,18 +206,19 @@
               <div class="form-elements">
                 <h2 class="justify-content-center">連絡資料</h2>
                 <br></br>
-                <div class="form-group row">
+
+                <div class="form-group row required">
                   <div class="form-group col-md-6">
-                    <label>姓名：</label>
+                    <label class="control-label">姓名：</label>
                   </div>
                   <div class="col-md-6">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="王小明" required>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="王小明" required="required">
                   </div>
                 </div>
 
-                <div class="form-group row">
+                <div class="form-group row required">
                   <div class="form-group col-md-6">
-                    <label>Email：</label>
+                    <label class="control-label">Email：</label>
                   </div>
                   <div class="col-md-6">
                     <input type="email" class="form-control" id="exampleFormControlInput1" name="email"
@@ -181,9 +226,9 @@
                   </div>
                 </div>
 
-                <div class="form-group row">
+                <div class="form-group row required">
                   <div class="form-group col-md-6">
-                    <label>電話：</label>
+                    <label class="control-label">電話：</label>
                   </div>
                   <div class="col-md-6">
                     <input type="text" class="form-control" id="phone" name="phone" placeholder="0912-345678">
@@ -284,7 +329,7 @@
                 <br></br>
                 <h2 class="justify-content-center">髮型</h2>
                 <br></br>
-                
+
                 <div class="form-row">
                   <div class="form-group col-md-4">
                     <label>德意志少女編髮（NT$1500/人）</label>
@@ -333,7 +378,7 @@
                 <input class="disp" id="hair2Disp" value="0" readonly>
                 <input class="fee" id="hair2Output" type="text" value="0" readonly name="hair2_fee"> -->
 
-                
+
 
                 <div class="form-row">
                   <div class="form-group col-md-4">
@@ -526,14 +571,15 @@
                   <textarea class="form-control" rows="5" id="comment" placeholder="如果您有任何其他需求歡迎一並告知，謝謝！"
                     name="special_requests"></textarea>
                 </div>
-                <button type="submit" class="btn btn-success ">送出</button>
+                <button type="submit" class="btn btn-default" style="background-color:silver;">送出</button>
+                <br></br>
               </div>
 
               <div class="thankyou_message" style="display:none;">
                 <h2>
                   <em>Thanks</em> for contacting us! We will get back to you soon!</h2>
               </div>
-            </form>            
+            </form>
           </div>
           <br>
         </div>
