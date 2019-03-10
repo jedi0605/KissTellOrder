@@ -212,7 +212,7 @@
                     <label class="control-label">姓名：</label>
                   </div>
                   <div class="col-md-6">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="王小明" required="required">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="姓名" required="required">
                   </div>
                 </div>
 
@@ -259,6 +259,18 @@
                   </div>
                   <div class="form-group col-md-4">
                     <input class="form-control" id="photoOutput" type="text" value="0" readonly name="photographer_fee">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="form-group col-md-4">
+                    <label for="rentClothInput">服裝租借（NT$ 2000）：</label>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input class="" id="rentClothInput" type="checkbox" onclick="calRentCloth() ">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <input class="form-control" id="rentOutput" type="text" value="0" readonly name="rentCloth_fee">
                   </div>
                 </div>
 
@@ -542,7 +554,7 @@
 
                 <div class="form-row ">
                   <div class="form-group col-md-4">
-                    <label>攝影妝 + 髮型折扣：</label>
+                    <label>攝影妝 + 髮型折扣 <br>(試營運期間限定）：</br></label>
                   </div>
                   <div class="form-group col-md-4">
                   </div>
@@ -605,6 +617,7 @@
   <script>
     var basicFee = basicOutput.value;
     var photoFee = 0;
+    var rentClothFee=0;
     var addTimeFee = 0;
     var makeUpFee = 0;
     var eyelashesFee = 0;
@@ -637,6 +650,19 @@
       calPrice();
     }
     photoOutput.value = photoFee;
+
+function calRentCloth() {
+      if (rentClothInput.checked == true) {
+        var rentClothFee = 2000;
+        rentOutput.value = 2000;
+      }
+      else {
+        var rentClothFee = 0;
+        rentOutput.value = 0;
+      }
+      calPrice();
+    }
+    rentOutput.value = photoFee;
 
     function calAddTime() {
       addTimeDisp.value = addTimeInput.value + ' 小時';
@@ -742,6 +768,7 @@
     function calPrice() {
       var basicFee = basicOutput.value;
       var photoFee = photoOutput.value;
+      var rentFee = rentOutput.value;
       var addTimeFee = addTimeOutput.value;
       var makeUpFee = makeUpOutput.value;
       var eyelashesFee = eyelashesOutput.value;
@@ -759,7 +786,7 @@
       var totalFee = 0;
 
       var preDiscount =
-        Number(basicFee) + Number(photoFee) + Number(addTimeFee) + Number(makeUpFee) + Number(eyelashesFee) + Number(hair1Fee) + Number(hair2Fee) + Number(hair3Fee) + Number(hair4Fee) + Number(hair5Fee) + Number(hair6Fee) + Number(hair7Fee) + Number(hair8Fee) + Number(hairGentFee);
+        Number(basicFee) + Number(photoFee) + Number(rentFee)+ Number(addTimeFee) + Number(makeUpFee) + Number(eyelashesFee) + Number(hair1Fee) + Number(hair2Fee) + Number(hair3Fee) + Number(hair4Fee) + Number(hair5Fee) + Number(hair6Fee) + Number(hair7Fee) + Number(hair8Fee) + Number(hairGentFee);
 
       preDiscountOutput.value = 'NT$ ' + preDiscount;
 
