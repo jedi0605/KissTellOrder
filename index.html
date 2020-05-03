@@ -47,124 +47,6 @@
     content: "*";
     color: red;
   }
-
-  /* html {
-    font: 12px sans-serif;
-  }
-
-  input {
-    font: 12px sans-serif;
-    outline: none;
-  }
-
-  body {
-    background-color: lightGray;
-    max-width: 420px;
-    margin: 10px auto;
-  }
-
-
-
-  #mainsection {
-    background-color: white;
-    border-radius: 10px 10px 0 0;
-  }
-
-  #submitsection {
-    background-color: pink;
-    border-radius: 0 0 10px 10px;
-  }
-
-  h1 {
-    text-align: center;
-    font: 28px 'Josefin Slab', serif;
-  }
-
-  h2 {
-    font: 20px sans-serif;
-    color: pink;
-  }
-
-  #contactDetails label {
-    display: inline-block;
-    width: 100px;
-  }
-
-  .contact {
-    display: inline-block;
-    width: 250px;
-    float: right;
-  }
-
-  textarea {
-    resize: none;
-    display: inline-block;
-    outline: none;
-    width: 100%;
-  }
-
-  #pricing label {
-    display: inline-block;
-    width: 200px;
-  }
-
-  #basic Output {
-    color: dimgray;
-  }
-
-  .disp {
-    border: 0 solid;
-    width: 50px;
-  }
-
-  .fee {
-    display: inline-block;
-    width: 40px;
-    float: right;
-    text-align: right;
-  }
-
-  .feeNoBoarder {
-    display: inline-block;
-    width: auto;
-    float: right;
-    border: 0px;
-    text-align: right;
-  }
-
-  .grayNoBoarder {
-    display: inline-block;
-    width: auto;
-    float: right;
-    border: 0px;
-    color: gray;
-    text-align: right;
-  }
-
-  .grayText {
-    color: dimgray;
-  }
-
-  input[type="range"] {
-    width: 60px;
-  }
-
-  .hair {
-    font-size: 11px;
-    color: dimgray;
-    padding-left: 0px;
-  }
-
-  button {
-    background-color: whitesmoke;
-  }
-
-  .required {
-    color: red;
-    font-size: 170%;
-  } */
-
-  /* <!-- @media only screen and (max-width: 360px) --> */
 </style>
 
 <body>
@@ -200,7 +82,7 @@
 
 
             <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
-              action="https://script.google.com/macros/s/AKfycbzwBVO_2IvD9qX2b_8fKsj1Qj6zDQedVbycn-Zg/exec">
+              action="https://script.google.com/macros/s/AKfycbwivt1dY6zE7oummUhHDJzVDo__2RYtA6RE1_ldnUTBqQTC-ss/exec">
 
 
               <div class="form-elements">
@@ -235,334 +117,82 @@
                   </div>
                 </div>
 
-                <br></br>
                 <h2 class="justify-content-center">價格表</h2>
                 <br></br>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-4">
-                    <label>基本費用（含場租 3 小時）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input type="text" class="form-control" id="basicOutput" name="basic_fee" value="3000" readonly>
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-4">
-                    <label for="photoInput">攝影師（NT$ 2000）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input class="" id="photoInput" type="checkbox" onclick="calPhoto() ">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="photoOutput" type="text" value="0" readonly name="photographer_fee">
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-4">
-                    <label for="rentClothInput">服裝租借（NT$ 2000）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input class="" id="rentClothInput" type="checkbox" onclick="calRentCloth() ">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="rentOutput" type="text" value="0" readonly name="rentCloth_fee">
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-4">
-                    <label>加租時間（NT$ 500/小時）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="addTimeInput" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 小時</option>
-                      <option value="2">2 小時</option>
-                      <option value="3">3 小時</option>
-                      <option value="4">4 小時</option>
-                      <option value="5">5 小時</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="addTimeDisp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="addTimeOutput" type="text" value="0" readonly
-                      name="additional_time_fee">
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-4">
-                    <label>攝影妝（NT$ 2000/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="makeUpInput" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="makeUpDisp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="makeUpOutput" type="text" value="0" readonly name="make_up_fee">
-                  </div>
-                </div>
-
-                <div class="form-group row">
-                  <div class="form-group col-md-4">
-                    <label>假睫毛（NT$ 300/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="eyelashesInput" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="eyelashesDisp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="eyelashesOutput" type="text" value="0" readonly
-                      name="eyelashes_fee">
-                  </div>
-                </div>
-
+                
                 <br></br>
-                <h2 class="justify-content-center">髮型</h2>
-                <br></br>
+                <div class="card-deck mb-3 text-center">
+                  <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                      <h4 class="my-0 font-weight-normal">Free</h4>
+                    </div>
+                    <div class="card-body">
+                      <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+                      <ul class="list-unstyled mt-3 mb-4">
+                        <li>10 users included</li>
+                        <li>2 GB of storage</li>
+                        <li>Email support</li>
+                        <li>Help center access</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                      <h4 class="my-0 font-weight-normal">Pro</h4>
+                    </div>
+                    <div class="card-body">
+                      <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+                      <ul class="list-unstyled mt-3 mb-4">
+                        <li>20 users included</li>
+                        <li>10 GB of storage</li>
+                        <li>Priority email support</li>
+                        <li>Help center access</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                      <h4 class="my-0 font-weight-normal">Enterprise</h4>
+                    </div>
+                    <div class="card-body">
+                      <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+                      <ul class="list-unstyled mt-3 mb-4">
+                        <li>30 users included</li>
+                        <li>15 GB of storage</li>
+                        <li>Phone and email support</li>
+                        <li>Help center access</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>         
 
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>德意志少女編髮（NT$1500/人）</label>
+                <div class="form-group row">
+                  <div class="form-group col-md-8">
+                    <label for="photoInput"> 方案二（NT$ 2000）：</label>
                   </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="hair2Input" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="hair2Disp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="hair2Output" type="text" value="0" readonly name="hair2_fee">
+                  <div class="form-group col-md-2">
+                    <input class="" id="photoInput" type="radio" name="Sulotion" onclick="calPhoto() ">
                   </div>
                 </div>
 
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>法國髻（NT$ 1500/人）</label>
+                <div class="form-group row">
+                  <div class="form-group col-md-8">
+                    <label for="photoInput"> 方案二（NT$ 2000）：</label>
                   </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="hair1Input" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="hair1Disp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="hair1Output" type="text" value="0" readonly name="hair1_fee">
+                  <div class="form-group col-md-2">
+                    <input class="" id="photoInput" type="radio" name="Sulotion" onclick="calPhoto() ">
                   </div>
                 </div>
 
-                <!-- <label for="hair2Input" class="hair">DIRNDL HAIR（NT$1500/人）：</label>
-                <input class="input" id="hair2Input" type="range" value="0" min="0" max="6" step="1" name="hair2"
-                  onchange="change()">
-                <input class="disp" id="hair2Disp" value="0" readonly>
-                <input class="fee" id="hair2Output" type="text" value="0" readonly name="hair2_fee"> -->
-
-
-
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>蛋捲頭（NT$ 2000/人）：</label>
+                <div class="form-group row">
+                  <div class="form-group col-md-8">
+                    <label for="rentClothInput">方案三（NT$ 2000）：</label>
                   </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="hair3Input" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="hair3Disp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="hair3Output" type="text" value="0" readonly name="hair3_fee">
+                  <div class="form-group col-md-2">
+                    <input class="" id="rentClothInput" type="radio" name="Sulotion" onclick="calPhoto() ">
                   </div>
                 </div>
 
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>蜂窩頭（$2000/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="hair4Input" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="hair4Disp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="hair4Output" type="text" value="0" readonly name="hair4_fee">
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>手指波浪（NT$ 2500/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="hair5Input" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="hair5Disp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="hair5Output" type="text" value="0" readonly name="hair5_fee">
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>躲貓貓（NT$2500/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="hair6Input" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="hair6Disp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="hair6Output" type="text" value="0" readonly name="hair6_fee">
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>侍童頭（NT$ 3000/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="hair7Input" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="hair7Disp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="hair7Output" type="text" value="0" readonly name="hair7_fee">
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>畫報美女頭（NT$3000/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="hair8Input" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="hair8Disp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="hair8Output" type="text" value="0" readonly name="hair8_fee">
-                  </div>
-                </div>
-
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <label>男士裝髮（NT$ 3000/人）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                    <select class="custom-select mr-sm-2" id="hairGentInput" onchange="change()">
-                      <option value="0" selected>Choose...</option>
-                      <option value="1">1 人</option>
-                      <option value="2">2 人</option>
-                      <option value="3">3 人</option>
-                      <option value="4">4 人</option>
-                      <option value="5">5 人</option>
-                      <option value="6">6 人</option>
-                    </select>
-                  </div>
-                  <input class="d-none" id="hairGentDisp" value="0" readonly>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" id="hairGentOutput" type="text" value="0" readonly
-                      name="gents_hair_fee">
-                  </div>
-                </div>
-
-                <div class="form-row ">
-                  <div class="form-group col-md-4">
-                    <label>總計（折扣前）：</label>
-                  </div>
-                  <div class="form-group col-md-4">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" type="text" id="preDiscountOutput" value="3000" readonly
-                      name="pre_discount_fee">
-                  </div>
-                </div>
-
-                <div class="form-row ">
-                  <div class="form-group col-md-4">
-                    <label>攝影妝 + 髮型折扣 <br>(試營運期間限定）：</br></label>
-                  </div>
-                  <div class="form-group col-md-4">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <input class="form-control" type="text" id="discountOutput" value="0" readonly
-                      name="hair_makeup_discount">
-                  </div>
-                </div>
                 <hr>
 
                 <div class="form-row ">
@@ -693,78 +323,6 @@ function calRentCloth() {
 
     eyelashesInput.oninput = calEyelashes;
 
-    function calHair1() {
-      hair1Disp.value = hair1Input.value + ' 人';
-      hair1Output.value = hair1Input.value * 1500;
-      var hair1Fee = hair1Output.value;
-    }
-
-    hair1Input.oninput = calHair1;
-
-    function calHair2() {
-      hair2Disp.value = hair2Input.value + ' 人';
-      hair2Output.value = hair2Input.value * 1500;
-      var hair2Fee = hair2Output.value;
-    }
-
-    hair2Input.oninput = calHair2;
-
-    function calHair3() {
-      hair3Disp.value = hair3Input.value + ' 人';
-      hair3Output.value = hair3Input.value * 2000;
-      var hair3Fee = hair3Output.value;
-    }
-
-    hair3Input.oninput = calHair3;
-
-    function calHair4() {
-      hair4Disp.value = hair4Input.value + ' 人';
-      hair4Output.value = hair4Input.value * 2000;
-      var hair4Fee = hair4Output.value;
-    }
-
-    hair4Input.oninput = calHair4;
-
-    function calHair5() {
-      hair5Disp.value = hair5Input.value + ' 人';
-      hair5Output.value = hair5Input.value * 2500;
-      var hair5Fee = hair5Output.value;
-    }
-
-    hair5Input.oninput = calHair5;
-
-    function calHair6() {
-      hair6Disp.value = hair6Input.value + ' 人';
-      hair6Output.value = hair6Input.value * 2500;
-      var hair6Fee = hair6Output.value;
-    }
-
-    hair6Input.oninput = calHair6;
-
-    function calHair7() {
-      hair7Disp.value = hair7Input.value + ' 人';
-      hair7Output.value = hair7Input.value * 3000;
-      var hair7Fee = hair7Output.value;
-    }
-
-    hair7Input.oninput = calHair7;
-
-    function calHair8() {
-      hair8Disp.value = hair8Input.value + ' 人';
-      hair8Output.value = hair8Input.value * 3000;
-      var hair8Fee = hair8Output.value;
-    }
-
-    hair8Input.oninput = calHair8;
-
-    function calhairGent() {
-      hairGentDisp.value = hairGentInput.value + ' 人';
-      hairGentOutput.value = hairGentInput.value * 3000;
-      var hairGentFee = hairGentOutput.value;
-    }
-
-    hairGentInput.oninput = calhairGent;
-
     function calPrice() {
       var basicFee = basicOutput.value;
       var photoFee = photoOutput.value;
@@ -772,15 +330,7 @@ function calRentCloth() {
       var addTimeFee = addTimeOutput.value;
       var makeUpFee = makeUpOutput.value;
       var eyelashesFee = eyelashesOutput.value;
-      var hair1Fee = hair1Output.value;
-      var hair2Fee = hair2Output.value;
-      var hair3Fee = hair3Output.value;
-      var hair4Fee = hair4Output.value;
-      var hair5Fee = hair5Output.value;
-      var hair6Fee = hair6Output.value;
-      var hair7Fee = hair7Output.value;
-      var hair8Fee = hair8Output.value;
-      var hairGentFee = hairGentOutput.value;
+     
       var preDiscount = 0;
       var discount = 0;
       var totalFee = 0;
@@ -788,20 +338,14 @@ function calRentCloth() {
       var preDiscount =
         Number(basicFee) + Number(photoFee) + Number(rentFee)+ Number(addTimeFee) + Number(makeUpFee) + Number(eyelashesFee) + Number(hair1Fee) + Number(hair2Fee) + Number(hair3Fee) + Number(hair4Fee) + Number(hair5Fee) + Number(hair6Fee) + Number(hair7Fee) + Number(hair8Fee) + Number(hairGentFee);
 
-      preDiscountOutput.value = 'NT$ ' + preDiscount;
 
       var makeUpCount = makeUpInput.value;
-
-      var hairCount =
-        Number(hair1Input.value) + Number(hair2Input.value) + Number(hair3Input.value) + Number(hair4Input.value) + Number(hair5Input.value) + Number(hair6Input.value) + Number(hair7Input.value) + Number(hair8Input.value);
 
       if (Number(hairCount) <= Number(makeUpCount)) {
         var discount = hairCount * 500;
       } else if (Number(hairCount) > Number(makeUpCount)) {
         var discount = makeUpCount * 500;
       }
-      discountOutput.value = '-NT$ ' + discount;
-
       var totalFee = preDiscount - discount;
       totalFeeOutput.value = 'NT$ ' + totalFee;
     }
